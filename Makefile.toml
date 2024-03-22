@@ -1,0 +1,22 @@
+[config]
+skip_core_tasks = true
+
+[tasks.setup]
+script_runner = "@shell"
+script = '''
+git clone https://github.com/qmk/qmk_firmware qmk || true
+cd qmk
+git submodule update --init --recursive
+git checkout 0.22.14
+cd keyboards
+ln -s ../../qmk_firmware/keyboards/keyball keyball
+cd ..
+qmk generate-compilation-database -kb keyball/keyball61 -km nazo6
+cp ./compile_commands.json ../qmk_firmware/keyboards/keyball/compile_commands.json
+'''
+
+[tasks.build]
+script = '''
+cd qmk
+make SKIP_GIT=yes keyball/keyball61:nazo6
+'''

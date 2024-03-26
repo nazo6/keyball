@@ -15,6 +15,13 @@ qmk generate-compilation-database -kb keyball/keyball61 -km nazo6
 cp ./compile_commands.json ../qmk_firmware/keyboards/keyball/compile_commands.json
 '''
 
+[tasks.generate-compilation-database]
+script = '''
+cd qmk
+qmk generate-compilation-database -kb keyball/keyball61 -km nazo6
+cp ./compile_commands.json ../qmk_firmware/keyboards/keyball/compile_commands.json
+'''
+
 [tasks.build]
 script = '''
 cd qmk

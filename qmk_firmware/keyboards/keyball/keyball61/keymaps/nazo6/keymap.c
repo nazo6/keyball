@@ -79,13 +79,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
   case 1:
-    rgblight_sethsv(50, 255, 20);
+    rgblight_sethsv(50, 255, 10);
     break;
   case 2:
-    rgblight_sethsv(0, 2, 20);
+    rgblight_sethsv(0, 2, 5);
     break;
   case 3:
-    rgblight_sethsv(130, 255, 30);
+    rgblight_sethsv(130, 255, 10);
     break;
 
   default:
@@ -111,3 +111,7 @@ void keyboard_post_init_user(void) {
   set_auto_mouse_enable(true);
   keyball_set_scroll_div(6);
 }
+
+// 容量削減
+uint16_t keycode_config(uint16_t keycode) { return keycode; }
+uint8_t mod_config(uint8_t mod) { return mod; }

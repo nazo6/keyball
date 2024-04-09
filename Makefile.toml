@@ -7,9 +7,9 @@ script = '''
 git clone https://github.com/qmk/qmk_firmware qmk || true
 cd qmk
 git submodule update --init --recursive
-git checkout 0.22.14
+git checkout 0.24.7
 cd keyboards
-ln -s ../../qmk_firmware/keyboards/keyball keyball
+ln -s ../../qmk_firmware/keyboards/keyball keyball || true
 cd ..
 qmk generate-compilation-database -kb keyball/keyball61 -km nazo6
 cp ./compile_commands.json ../qmk_firmware/keyboards/keyball/compile_commands.json

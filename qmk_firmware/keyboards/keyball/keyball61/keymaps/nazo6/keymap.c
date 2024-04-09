@@ -35,6 +35,7 @@ enum nazo6_kc {
   JP_CARET = KC_EQUAL,
   JP_ZNHN = KC_GRAVE,
 
+  MIDDLE_BTN = KEYBALL_SAFE_RANGE
 };
 
 // clang-format off

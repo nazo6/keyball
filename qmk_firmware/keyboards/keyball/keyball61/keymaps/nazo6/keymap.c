@@ -122,11 +122,4 @@ void oledkit_render_info_user(void) {
 
 #endif
 
-void keyboard_post_init_user(void) {
-  set_auto_mouse_enable(true);
-  keyball_set_scroll_div(6);
-}
-
-// 容量削減
-uint16_t keycode_config(uint16_t keycode) { return keycode; }
-uint8_t mod_config(uint8_t mod) { return mod; }
+void keyboard_post_init_user(void) { set_auto_mouse_enable(true); }

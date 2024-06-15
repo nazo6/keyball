@@ -42,11 +42,11 @@ enum nazo6_kc {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ベースレイヤ
   [0] = LAYOUT_universal(
-    LT(4,JP_ZNHN), KC_1   , KC_2         , KC_3       , KC_4   , KC_5        ,          /**/          KC_6        , KC_7   , KC_8   , KC_9   , KC_0    , JP_BSLSH_2,
-    KC_TAB       , KC_Q   , KC_W         , KC_E       , KC_R   , KC_T        ,          /**/          KC_Y        , KC_U   , KC_I   , KC_O   , KC_P    , KC_MINS,
-    KC_ESC       , KC_A   , KC_S         , KC_D       , KC_F   , KC_G        ,          /**/          KC_H        , KC_J   , KC_K   , KC_L   , KC_SCLN , JP_COLN,
-    KC_LSFT      , KC_Z   , KC_X         , KC_C       , KC_V   , KC_B        , KC_RBRC, /**/ KC_NUHS, KC_N        , KC_M   , KC_COMM, KC_DOT , KC_SLSH , JP_BSLSH,
-    KC_LCTL      , KC_LWIN, LT(3,K_MHNKN), TG(2)      , KC_LALT, LT(2,KC_SPC), KC_SPC , /**/ KC_BSPC, LT(2,KC_ENT), _______, _______, _______, JP_CARET, JP_AT
+    LT(4,JP_ZNHN), KC_1   , KC_2    , KC_3   , KC_4         , KC_5        ,          /**/          KC_6        , KC_7   , KC_8   , KC_9   , KC_0    , KC_EQUAL,
+    KC_TAB       , KC_Q   , KC_W    , KC_E   , KC_R         , KC_T        ,          /**/          KC_Y        , KC_U   , KC_I   , KC_O   , KC_P    , KC_MINS,
+    KC_ESC       , KC_A   , KC_S    , KC_D   , KC_F         , KC_G        ,          /**/          KC_H        , KC_J   , KC_K   , KC_L   , KC_SCLN , KC_QUOT,
+    KC_LSFT      , KC_Z   , KC_X    , KC_C   , KC_V         , KC_B        , KC_LBRC, /**/ KC_RBRC, KC_N        , KC_M   , KC_COMM, KC_DOT , KC_SLSH , KC_BSLS,
+    KC_LCTL      , KC_LWIN, TG(2)   , KC_LALT, LT(3,KC_SPC) , LT(2,KC_SPC), KC_SPC , /**/ KC_BSPC, LT(2,KC_ENT), _______, _______, _______, KC_RSFT , KC_RCTL
   ),
 
 
@@ -61,31 +61,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // マウス+便利キー
   [2] = LAYOUT_universal(
-    _______, KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5     ,          /**/           KC_F6   , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11   ,
-    _______, _______  , KC_7     , KC_8     , KC_9     , _______   ,          /**/          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RGHT  , _______  , KC_F12   ,
-    _______, _______  , KC_4     , KC_5     , KC_6     , S(KC_SCLN),          /**/          KC_PGUP  , KC_BTN1  , SCRL_MO  , KC_BTN2  , _______  , KC_AUDIO_VOL_UP,
-    _______, _______  , KC_1     , KC_2     , KC_3     , S(KC_MINS), S(KC_8), /**/ S(KC_9), KC_PGDN  , KC_BTN4  , KC_BTN3  , KC_BTN5  , _______  , KC_AUDIO_VOL_DOWN,
-    _______, _______  , KC_0     , TG(2)    , _______  , _______   , _______, /**/ _______, _______  , _______  , _______  , _______  , _______  , KC_PRINT_SCREEN
+    _______, KC_F1    , KC_F2   , KC_F3   , KC_F4   , KC_F5   ,          /**/           KC_F6   , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11,
+    _______, _______  , KC_INS  , KC_HOME , KC_PGUP , _______ ,          /**/          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RGHT  , _______  , KC_F12,
+    _______, _______  , KC_DEL  , KC_END  , KC_PGDN , _______ ,          /**/          KC_PGUP  , KC_BTN1  , SCRL_MO  , KC_BTN2  , _______  , KC_AUDIO_VOL_UP,
+    _______, _______  , _______ , _______ , _______ , _______ , _______, /**/ _______, KC_PGDN  , KC_BTN4  , KC_BTN3  , KC_BTN5  , _______  , KC_AUDIO_VOL_DOWN,
+    _______, _______  , _______ , _______ , _______ , _______ , _______, /**/ _______, _______  , _______  , _______  , _______  , _______  , KC_PRINT_SCREEN
   ),
 
-  // 記号とか？
+  // 記号
   [3] = LAYOUT_universal(
-    S(KC_ESC), S(KC_1)   , KC_LBRC   , S(KC_3)   , S(KC_4), S(KC_5),             /**/             KC_EQL , S(KC_6), S(KC_QUOT), S(KC_8)  , S(KC_9)   , S(KC_INT1),
-    S(KC_DEL), S(KC_Q)   , S(KC_W)   , S(KC_E)   , S(KC_R), S(KC_T),             /**/             S(KC_Y), S(KC_U), S(KC_I)   , S(KC_O)  , S(KC_P)   , S(KC_INT3),
-    S(KC_TAB), S(KC_A)   , S(KC_S)   , S(KC_D)   , S(KC_F), S(KC_G),             /**/             S(KC_H), S(KC_J), S(KC_K)   , S(KC_L)  , KC_QUOT   , S(KC_2)   ,
-    _______  , S(KC_Z)   , S(KC_X)   , S(KC_C)   , S(KC_V), S(KC_B), S(KC_RBRC), /**/ S(KC_NUHS), S(KC_N), S(KC_M), S(KC_COMM), S(KC_DOT), S(KC_SLSH), S(KC_RSFT),
-    _______  , S(KC_LCTL), S(KC_LALT), S(KC_LGUI), _______, _______, _______   , /**/ _______   , _______, _______, S(KC_RGUI), _______  , S(KC_RALT), _______
+    _______, _______, _______, _______, _______, _______,          /**/           _______   , _______   , _______   , _______    , _______, _______,
+    _______, _______, KC_KP_7, KC_KP_8, KC_KP_9, _______,          /**/           S(KC_1)   , S(KC_2)   , S(KC_3)   , S(KC_4)    , S(KC_5), _______,
+    _______, _______, KC_KP_4, KC_KP_5, KC_KP_6, _______,          /**/           S(KC_6)   , S(KC_7)   , S(KC_8)   , S(KC_9)    , S(KC_0), _______,
+    _______, _______, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______, /**/ _______ , KC_QUOT   , S(KC_QUOT), KC_EQUAL  , S(KC_EQUAL), _______, _______,
+    _______, _______, KC_KP_0, _______, _______, _______, _______, /**/ _______ , _______   , _______   , _______   , _______    , _______, _______
   ),
 
   // メタレイヤ(keyball自体の設定とか)
   [4] = LAYOUT_universal(
-    _______  , AML_TO   , AML_I50  , AML_D50 , _______  , _______  ,            /**/          RGB_M_P  , RGB_M_B  , RGB_M_R  , RGB_M_SW , RGB_M_SN , RGB_M_K  ,
-    RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI , _______  , _______  ,            /**/          RGB_M_X  , RGB_M_G  , RGB_M_T  , RGB_M_TW , _______  , _______  ,
-    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD , _______  , _______  ,            /**/          CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
-    RGB_TOG  , _______  , SCRL_DVD , SCRL_DVI, SCRL_MO  , SCRL_TO  , EE_CLR   , /**/ EE_CLR , KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END   , _______  , _______  ,
-    QK_BOOT  , _______  , KC_LEFT  , TO(0)   , KC_UP    , KC_RGHT  , _______  , /**/ _______, KC_BSPC  , AML_TO   , _______  , _______  , AML_TO  , QK_BOOT
+    _______, _______, _______, _______, _______, _______,          /**/          _______ , _______, CPI_I1K , _______ , _______, _______,
+    _______, _______, _______, _______, _______, _______,          /**/          _______ , AML_I50, CPI_I100, SCRL_DVI, _______, _______,
+    _______, _______, _______, _______, _______, _______,          /**/          _______ , AML_D50, CPI_D100, SCRL_DVD, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, /**/ _______, _______ , _______, CPI_D1K , _______ , _______, _______,
+    _______, _______, _______, _______, _______, _______, RGB_TOG, /**/ KBC_RST, KBC_SAVE, _______, _______ , _______ , _______, _______
   ),
-  };
+};
+
 // clang-format on
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -94,10 +95,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_sethsv(210, 200, 5);
     break;
   case 2:
-    rgblight_sethsv(0, 200, 10);
+    rgblight_sethsv(250, 200, 10);
     break;
   case 3:
-    rgblight_sethsv(163, 200, 10);
+    rgblight_sethsv(30, 200, 10);
     break;
   case 4:
     rgblight_sethsv(85, 200, 10);

@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______  , KC_INS  , KC_HOME , KC_PGUP , _______ ,          /**/          KC_LEFT  , KC_DOWN  , KC_UP    , KC_RGHT  , _______  , KC_F12,
     _______, _______  , KC_DEL  , KC_END  , KC_PGDN , _______ ,          /**/          KC_PGUP  , KC_BTN1  , SCRL_MO  , KC_BTN2  , _______  , KC_AUDIO_VOL_UP,
     _______, _______  , _______ , _______ , _______ , _______ , _______, /**/ _______, KC_PGDN  , KC_BTN4  , KC_BTN3  , KC_BTN5  , _______  , KC_AUDIO_VOL_DOWN,
-    _______, _______  , _______ , _______ , _______ , _______ , _______, /**/ _______, _______  , _______  , _______  , _______  , _______  , KC_PRINT_SCREEN
+    _______, _______  , _______ , _______ , _______ , _______ , _______, /**/ KC_DEL , _______  , _______  , _______  , _______  , _______  , KC_PRINT_SCREEN
   ),
 
   // 記号
